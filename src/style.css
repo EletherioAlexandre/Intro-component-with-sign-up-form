@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    font-size: 62.5%;
+    --primary-color: hsl(0, 100%, 74%);
+    --primary-green-color: hsl(154, 59%, 51%);
+}
+
+body {
+    background-image: url('../images/bg-intro-desktop.png');
+    background-color: var(--primary-color);
+    font-size: 1.6rem;
+    font-family: "Poppins", sans-serif, Helvetica;
+    pointer-events: auto;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+
+.main-text {
+    width: 50%;
+}
+
+.main-text p:first-child {
+    font-size: 6.0rem;
+    color: #fff;
+}
+
+.main-text p {
+    font-size: 2rem;
+}
+
+.try-free {
+    margin-bottom: 20px;
+    background-color: hsl(248, 32%, 49%);
+    width: 95%;
+    color: #fff;
+    text-align: center;
+    padding: 3%;
+    border-radius: 10px;
+    box-shadow: 1px 3px 6px #000;
+    cursor: pointer;
+}
+
+.try-free:hover {
+    background-position: 100% 0;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    background-image: linear-gradient(to right, hsl(248, 32%, 49%), hsl(248, 44%, 71%), hsl(249, 28%, 71%), hsl(251, 26%, 87%));
+    box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+}
+
+.try-free span {
+    color: #fff;
+    font-weight: bold;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    background-color: #fff;
+    flex-direction: column;
+    display: flex;
+    width: 90%;
+    padding: 30px;
+    border-radius: 9px;
+}
+
+input {
+    padding: 10px;
+    padding-left: 15px;
+    margin: 10px;
+}
+
+button {
+    background-color: var(--primary-green-color);
+    border: none;
+    color: #fff;
+    padding: 15px;
+    margin: 10px 10px;
+    border-radius: 5px;
+    box-shadow: 1px 5px 4px #888888;
+    cursor: pointer;
+}
+
+button:hover {
+    background-position: 100% 0;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
+    box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+}
+
+form p{
+    color: lightgrey;
+}
+
+form span{
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.modal {
+    background-color: #000;
+    color: #fff;
+    width: 50%;
+    height: auto;
+    padding: 20px;
+    text-align: justify;
+    border-radius: 5px;
+    position: absolute;
+    pointer-events: none;
+    display: flex;
+    opacity: 0;
+    z-index: 1;
+}
+
+.modal h1 {
+    color: yellow;
+    text-align: center;
+}
+
+.modal button {
+    float: right;
+    cursor: pointer;
+}
+
+.modal.open {
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+    color: #fff;
+    width: 50%;
+    height: auto;
+    padding: 20px;
+    text-align: justify;
+    border-radius: 5px;
+    position: absolute;
+    pointer-events: auto;
+    display: flex;
+    opacity: 1;
+    z-index: 1;   
+}
+
+footer {
+    margin-top: 50px;
+    text-align: center;
+    flex: 0;
+}
