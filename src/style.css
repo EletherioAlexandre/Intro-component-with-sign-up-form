@@ -14,7 +14,7 @@
 
 body {
     width: 100vw;
-    background-image: url('../images/bg-intro-desktop.png');
+    background-image: url('./images/bg-intro-desktop.png');
     background-color: var(--primary-color);
     font-size: 1.6rem;
     font-family: "Poppins", sans-serif, Helvetica;
@@ -100,7 +100,7 @@ input {
 }
 
 input.errorMessage {
-    background-image: url("../images/icon-error.svg");
+    background-image: url("./images/icon-error.svg");
     background-repeat: no-repeat;
     background-position: 95%;
 }
