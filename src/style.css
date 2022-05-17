@@ -13,6 +13,7 @@
 }
 
 body {
+    width: 100vw;
     background-image: url('../images/bg-intro-desktop.png');
     background-color: var(--primary-color);
     font-size: 1.6rem;
@@ -21,6 +22,7 @@ body {
     display: flex;
     flex-wrap: wrap-reverse;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 .container {
@@ -94,6 +96,7 @@ input {
     padding: 10px;
     padding-left: 15px;
     margin: 10px;
+    border-color: none;
 }
 
 button {
@@ -116,11 +119,11 @@ button:hover {
     box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
 }
 
-form p{
+form p {
     color: lightgrey;
 }
 
-form span{
+form span {
     color: var(--primary-color);
     cursor: pointer;
 }
@@ -164,7 +167,7 @@ form span{
     pointer-events: auto;
     display: flex;
     opacity: 1;
-    z-index: 1;   
+    z-index: 1;
 }
 
 footer {
@@ -174,6 +177,10 @@ footer {
 }
 
 @media screen and (max-width: 1016px) {
+    body {
+        width: 100%;
+    }
+
     .main-text h1 {
         font-size: 4rem;
         color: #fff;
@@ -191,6 +198,10 @@ footer {
 
 
 @media screen and (max-width: 769px) {
+    body {
+        width: 100%;
+    }
+
     .main-text h1 {
         font-size: 4rem;
         color: #fff;
@@ -206,10 +217,14 @@ footer {
     .modal-open {
         width: 75%;
     }
-    
+
 }
 
 @media screen and (max-width: 680px) {
+    body {
+        width: 100%;
+    }
+
     .main-text h1 {
         font-size: 3rem;
         color: #fff;
@@ -246,11 +261,19 @@ footer {
     }
 
     .main-text {
-        width: 80%;
+        width: 100%;
+    }
+
+    .main-text p {
+        width: 100%;
     }
 }
 
 @media (min-width: 320px) and (max-width: 375px) {
+    body {
+        width: 100%;
+    }
+
     .main-text {
         width: 100%;
     }
