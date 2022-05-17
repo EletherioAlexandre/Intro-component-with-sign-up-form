@@ -99,6 +99,23 @@ input {
     border-color: none;
 }
 
+input.errorMessage {
+    background-image: url("../images/icon-error.svg");
+    background-repeat: no-repeat;
+    background-position: 95%;
+}
+
+.validated {
+    display: none;
+}
+
+.error {
+    display: flex;
+    justify-content: flex-end;
+    color: red;
+
+}
+
 button {
     background-color: var(--primary-green-color);
     border: none;

@@ -21,9 +21,9 @@ form.addEventListener("submit", event => {
   event.preventDefault();
   const validStatus = validFields();
 
-  // if (validStatus) {
-  //   event.target.submit()
-  // }
+    if (validStatus) {
+      form.submit();
+    }
 
 });
 
@@ -35,59 +35,40 @@ function isEmailValid(email) {
   return emailRegexp.test(email)
 }
 
+
 const validFields = () => {
 
-  let status = true;
+    let status = true;
 
-  let input = document.querySelectorAll("input");
-  let first_name = document.getElementById("input-FirstName").value;
-  let last_name = document.getElementById("input-LastName").value;
-  let email = document.getElementById("input-email").value;
-  let password = document.getElementById("input-password").value;
-  let msg_error = document.querySelectorAll("label");
+    let input = document.querySelectorAll("input");
+    let email = document.getElementById("input-email").value;
+    let msg_error = document.querySelectorAll("label");
 
-  if (!first_name == "") {
-    input[0].style.borderColor = "green";
-    msg_error[0].innerHTML = `<small style="display: none></small>`;
-    status = false;
-  }
+    for (let index = 0; index < input.length; index++) {
 
-  else {
-    input[0].style.borderColor = "red";
-    msg_error[0].innerHTML = `<small style="display: flex; justify-content: flex-end; color: red;">First Name cannot be empty</small>`;
-  };
+      input[index].style.borderColor = "green";
+      msg_error[index].innerHTML = `<small class="validated"></small>`;
+      input[index].classList.remove("errorMessage");
 
-  if (!last_name == "") {
-    input[1].style.borderColor = "green";
-    msg_error[1].innerHTML = `<small style="display: none></small>`;
-    status = false;
-  }
+      if (input[index].value == "") {
+        input[index].style.borderColor = "red";
+        input[index].classList.add("errorMessage")
+        msg_error[index].innerHTML = `<small class="error">${input[index].placeholder} cannot be empty</small>`;
 
-  else {
-    input[1].style.borderColor = "red";
-    msg_error[1].innerHTML = `<small style="display: flex; justify-content: flex-end; color: red;">Last Name cannot be empty</small>`;
-  };
+        status = false;
+        
+      } else if (input[index].placeholder == "Email Address" && !isEmailValid(email)) {
+        input[index].style.borderColor = "red";
+        input[index].classList.add("errorMessage")
+        msg_error[index].innerHTML = `<small class="error">Looks like this is not an email</small>`;
 
-  if (!isEmailValid(email) == "") {
-    input[2].style.borderColor = "green";
-    msg_error[2].innerHTML = `<small style="display: none></small>`;
-    status = false;
-  }
-  else {
-    input[2].style.borderColor = "red";
-    msg_error[2].innerHTML = `<small style="display: flex; justify-content: flex-end; color: red;">Looks like this is not an email</small>`;
-  }
-
-  if (!password == "") {
-    input[3].style.borderColor = "green";
-    msg_error[3].innerHTML = `<small style="display: none></small>`;
-    status = false;
-  }
-
-  else {
-    input[3].style.borderColor = "red";
-    msg_error[3].innerHTML = `<small style="display: flex; justify-content: flex-end; color: red;">Password cannot be empty</small>`;
-  }
+        status = false;
+      }
+    }
 
   return status;
 }
+
+   
+
+  
